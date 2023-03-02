@@ -1,4 +1,34 @@
 <div class="test">
     <h3>Đây là component Home</h3>
     <p>Đây là text trong Home</p>
+    <p>Tên: {{ name }}</p>
+
+    <a [href]="linkYoutube" target="_blank" 
+        [class.non-decoration]="isNonDecoration" 
+        bind-class.backgounr-orange="true"
+    >{{title}}</a><br>
+
+    <a bind-href="linkYoutube" target="_blank" 
+        [style.color]="color" 
+        bind-style.font-size.px="50"
+    >{{title}}</a>
+
+    <hr>
+    <p>Event binding</p>
+    <button (click)="onClick($event)">Click me</button>
+    <p>{{count}}</p>
+    <button (click)="onClickCount()">Count 1</button>
+    <button (click)="count = count + 1">Count 2</button>
+    <br>
+    <p>Enter some thing: {{keyword}}</p> 
+    <input type="text" name="" id="" (keyup)="onKeyUp($event)">
+    <br>
+    <input type="text" name="" id="" (keyup.enter)="onKeyUpEnter($event)">
+    <p>result: {{ result }}</p>
+
+    <form action="">
+        <p>2 way bind:  {{ twoWayBinding }}</p>
+        <input type="text" name="" id="" [(ngModel)]="twoWayBinding" [ngModelOptions]="{standalone: true}">
+    </form>
+    <input type="text" name="" id="" [(ngModel)]="twoWayBinding">
 </div>
