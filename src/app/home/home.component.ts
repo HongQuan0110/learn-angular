@@ -14,6 +14,7 @@ export class HomeComponent {
   public count: number = 0;
   public keyword: string = '';
   public result: string = '';
+  public twoWayBinding: string = '';
 
   onClick = function(params: any) {
     console.log(params.target.innerHTML)

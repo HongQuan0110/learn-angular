@@ -25,4 +25,10 @@
     <br>
     <input type="text" name="" id="" (keyup.enter)="onKeyUpEnter($event)">
     <p>result: {{ result }}</p>
+
+    <form action="">
+        <p>2 way bind:  {{ twoWayBinding }}</p>
+        <input type="text" name="" id="" [(ngModel)]="twoWayBinding" [ngModelOptions]="{standalone: true}">
+    </form>
+    <input type="text" name="" id="" [(ngModel)]="twoWayBinding">
 </div>
