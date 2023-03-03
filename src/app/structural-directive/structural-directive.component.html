@@ -1,0 +1,64 @@
+<div class="test">
+    <input type="number" [(ngModel)]="age">
+
+    <!-- 0 -->
+    <div *ngIf="age > 18 then gia else tre"></div>
+    <!-- <ng-template *ngIf="age > 18 then gia else tre"></ng-template> -->
+    <ng-template #gia>
+        <p>You are too old</p>
+    </ng-template>
+    <ng-template #tre>
+        <p>You are too young</p>
+    </ng-template>
+
+    <!-- 1 -->
+    <hr>
+    <ng-container *ngIf="age > 18 then dutuoi else chuadu"></ng-container>
+    <ng-template #dutuoi>
+        <p>Đủ tuổi</p>
+    </ng-template>
+    <ng-template #chuadu>
+        <p>Chưa đủ</p>
+    </ng-template>
+
+    <!-- 2 -->
+    <hr>
+    <h3 *ngIf="age > 18 else behon">
+        >>>
+    </h3> 
+    <ng-template #behon>
+        <p><<<</p>
+    </ng-template>
+
+    <!-- 3 -->
+    <hr>
+    <ng-container *ngIf="age > 18 else behon">
+        <h3 >
+            >>>
+        </h3> 
+    </ng-container>
+    <ng-template #behon>
+        <h3><<<</h3>
+    </ng-template>
+
+    <!-- 4 -->
+    <hr>
+    <div *ngIf="age">
+        <h1>{{age}}</h1>
+    </div>
+
+    <!-- shorthand -->
+    <hr>
+    <ng-template [ngIf]="age > 18">
+        <h2 >wow</h2>
+    </ng-template>
+   
+    <p>Hip!</p>
+    <ng-template>
+        <p>Hip!</p>
+    </ng-template>
+    <ng-template *ngIf="age">
+        <p>Hip a!</p>
+    </ng-template>
+    <p>Hooray!</p>
+</div>
