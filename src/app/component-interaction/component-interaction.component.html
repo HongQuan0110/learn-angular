@@ -1,0 +1,13 @@
+<div class="test">
+    <p>Họ tên: {{ name }}</p>
+    <p>Tuổi: {{ tuoi }}</p>
+    <p>Giới tính: {{ gioitinh }}</p>
+    <p>Môn học: {{ subject }}</p>
+    <hr>
+    <p>Full Name</p>
+    <input type="text" [(ngModel)]="txtFullName">
+    <br>
+    <input type="number" [(ngModel)]="txtPhone">
+    <br>
+    <button (click)="onHandelClick()">Send data</button>
+</div>
