@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-component-interaction',
@@ -7,14 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ComponentInteractionComponent implements OnInit {
 
-  @Input('users') user: any[] | undefined;
+  @Input() users: any[] | undefined;
   @Input('name') name: string | undefined;
   @Input('age') tuoi: number | undefined;
   @Input('gender') gioitinh: string | undefined;
   private _subject!: string;
 
+  public txtFullName!: string;
+  public txtPhone!: number;
+  @Output('logName') onHandelFullName = new EventEmitter<string>();
+  @Output() onHandelPhone = new EventEmitter<number>();
+
   ngOnInit(): void {
-    console.log(this.user);
+    console.log(this.users);
   }
 
   @Input()
@@ -22,8 +27,13 @@ export class ComponentInteractionComponent implements OnInit {
     this._subject = subject;
   }
 
-  get subject() {
+  get subject(): string {
     return this._subject;
+  }
+
+  onHandelClick() {
+    this.onHandelFullName.emit(this.txtFullName);
+    this.onHandelPhone.emit(this.txtPhone);
   }
   
 }

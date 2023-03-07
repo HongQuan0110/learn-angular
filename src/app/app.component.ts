@@ -23,5 +23,16 @@ export class AppComponent {
       name: 'c'
     },
     'abc'
-  ]
+  ];
+  public fullName: string | undefined;
+  public phone: number | undefined;
+
+  getFullName(data: string, ...rest: any[]): void {
+    console.log(data, rest);
+    this.fullName = data;
+  }
+
+  getPhone(phone: number): void {
+    this.phone = phone;
+  }
 }

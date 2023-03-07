@@ -10,5 +10,10 @@
         gender="Nam"
         subject="{{title}}"
         [users]="arrayUser"
+        (logName)="getFullName($event)"
+        (onHandelPhone)="getPhone($event)"
     ></app-component-interaction>
 </div>
+<br>
+Receive name from child component: {{fullName}}<br/>
+Receive phone from child component: {{phone}}
