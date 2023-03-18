@@ -1,0 +1,68 @@
+<div class="test">
+    <h2>Pipe</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên pipe</th>
+                <th>Đầu vào</th>
+                <th>Kết quả</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>number</td>
+                <td>{{so}}</td>
+                <td>{{so | number: '3.3-5'}}</td>
+            </tr>
+            <tr>
+                <td>formatData</td>
+                <td>{{text}}</td>
+                <td>{{text | formatData: 10: 50 }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>STATUS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="" id="" [(ngModel)]="inpId"></td>
+                <td><input type="text" name="" id="" [(ngModel)]="inpName"></td>
+                <td>
+                    <select name="" id="" [(ngModel)]="inpStatus">
+                        <option value="true">Active</option>
+                        <option value="false">Deactive</option>
+                    </select>
+                </td>
+            </tr>
+            <tr *ngFor="let item of products | filter: inpId: inpName: inpStatus">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th (click)="onSort('name')">NAME</th>
+                <th (click)="onSort('price')">PRICE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of products | sort: sortBy: sortValue; let i = index">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.price | currency: 'USD': true: '1.0-3'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
