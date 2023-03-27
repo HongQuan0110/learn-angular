@@ -11,6 +11,7 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { FormatDataPipe } from './pipes/format-data.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { TemplateVariablesComponent } from './components/template-variables/template-variables.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SortPipe } from './pipes/sort.pipe';
     PipeComponent,
     FormatDataPipe,
     FilterPipe,
-    SortPipe
+    SortPipe,
+    TemplateVariablesComponent
   ],
   imports: [
     BrowserModule,
