@@ -1,0 +1,12 @@
+<div class="test">
+    Template Reference Variables
+    <br>
+    <input type="text" #txtName>
+    <input type="text" ref-txtPhone>
+    <button (click)="onGetData(txtName.value, txtPhone.value)">
+        Get data 1
+    </button>
+    <button (click)="onGetDataComp()">
+        Get data 2
+    </button>
+</div>
